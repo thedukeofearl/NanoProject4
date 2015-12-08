@@ -1,5 +1,5 @@
 
-
+{% block comments %}
 
 {% for post in posts %}
     {% if user and user.user_id() == post.author.identity %}
@@ -10,3 +10,4 @@
 {% endfor %}
       wrote:{{post_content}} </blockquote>\n
       </div>\n
+{% block comments %}
