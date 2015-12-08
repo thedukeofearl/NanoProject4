@@ -1,12 +1,9 @@
-
-
-
 {% for post in posts %}
     {% if user and user.user_id() == post.author.identity %}
-        <div><h3>(You) {{post.author.name}}</h3>
-      else:
-        <div><h3>{{post.author.name}}</h3>
+        <div><h3>(You) {{post_author_name}}</h3>
+    {% else %}
+        <div><h3>{{post_author_name}}</h3>
     {% endif %}
 {% endfor %}
-      wrote:' + cgi.escape(post.content) + '</blockquote>\n'
+      wrote:' + cgi.escape(post_content) + '</blockquote>\n'
       posts_html += '</div>\n'
