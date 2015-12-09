@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% block comments %}
 
@@ -11,3 +12,14 @@
       wrote:{{post_content}} </blockquote>\n
       </div>\n
 {% endblock %}
+=======
+{% for post in posts %}
+    {% if user and user.user_id() == post.author.identity %}
+        <div><h3>(You) {{post_author_name}}</h3>
+    {% else %}
+        <div><h3>{{post_author_name}}</h3>
+    {% endif %}
+{% endfor %}
+      wrote:' + cgi.escape(post_content) + '</blockquote>\n'
+      posts_html += '</div>\n'
+>>>>>>> origin/Transfer-posts_html-to-jinja
